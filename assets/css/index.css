@@ -1429,11 +1429,11 @@ footer p #aboutlink {
 }
 
 footer p #aboutlink:hover {
-  color: #fc3;
+  color: var(--primary_color_2);
 }
 
 footer a:hover {
-  color: #fc3;
+  color:var(--primary_color_2);
 }
 
 footer .social {
@@ -1470,8 +1470,8 @@ footer .social li a {
 }
 
 footer .social li a:hover {
-  background-color: #fba70b;
-  border-color: #fba70b;
+  background-color: var(--secondary_color_1);
+  border-color: var(--secondary_color_1);
   color: #fff;
 }
 
@@ -1498,7 +1498,7 @@ footer .sub-footer a {
 }
 
 footer .sub-footer a:hover {
-  color: #fc3;
+  color: var(--primary_color_2);
 }
 
 footer .sub-footer p {
@@ -1543,8 +1543,8 @@ footer .sub-footer p {
 }
 
 .footer2 .social li a:hover {
-  background-color: #fba70b;
-  border-color: #fba70b;
+  background-color: var(--primary_color_1);
+  border-color:  var(--primary_color_1);
   color: #fff;
 }
 
@@ -1816,10 +1816,11 @@ preloader
 .our-team {
   padding: 30px 0 40px;
   margin-bottom: 30px;
-  background-color: #f7f5ec;
+  background-color: white;
   text-align: center;
   overflow: hidden;
   position: relative;
+  box-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 }
 
 .our-team .picture {
@@ -1878,7 +1879,7 @@ preloader
 .our-team .title {
   display: block;
   font-size: 15px;
-  color: #4e5052;
+  color: #7a7a7a;
   text-transform: capitalize;
 }
 
