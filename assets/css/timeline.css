@@ -1,8 +1,8 @@
 :root {
-  --primary_color_1: #648e11;
-  --primary_color_2: #83c702;
-  --secondary_color_1: #709a08;
-  --secondary_color_2: #2b5115;
+  --primary_color_1:#3667b1;
+  --primary_color_2: #418aca;
+  --secondary_color_1: #41bbd4;
+  --secondary_color_2:  #488fcd;
 }
 
 .main-timeline {
