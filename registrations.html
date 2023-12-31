@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Real Hack 4.0 - Official Website">
@@ -26,6 +25,20 @@
     <script src="assets/js/flipdown.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
 
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function () {
+            var dropdown = document.getElementById("dropdown");
+            var universityInput = document.getElementById("universityInput");
+
+            dropdown.addEventListener("change", function () {
+                if (dropdown.value === "Other") {
+                    universityInput.style.display = "block";
+                } else {
+                    universityInput.style.display = "none";
+                }
+            });
+        });
+    </script>
 </head>
 
 <body>
@@ -168,9 +181,131 @@
 
     <div id="registration-form" class="pt-3 form-container" style="position: relative; z-index: 99;"
         data-scroll-reveal="enter left move 30px over 0.3s after 0.2s">
-        <iframe
-            src="https://docs.google.com/forms/d/e/1FAIpQLSenFqeLaBu6s80dLfkKsraEgwGJchB3cDe_PxwrEYn3tcNXmw/viewform?embedded=true"
-            class="register-form" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+
+    <form method="POST" action="## ADD realhace 5.0 registraion google form link here">
+        
+        <!-- Team Info -->
+        <fieldset>
+            <legend>Team Details</legend>
+           <label for="name" id="name-label">
+            Email of the Team *
+           <input class="" type="email" id="name" name="name" placeholder="Team Email" required />
+           </label>
+     
+           <label for="email" id="email-label">
+            Team Name *
+           <input class="" type="text" id="email" name="email" placeholder="Team Name" required />
+           </label>
+    
+            <label for="dropdown">
+                University Name ? *
+                <select id="dropdown" name="dropdown" class="m-t-xs">
+                 <option selected>Choose</option>
+                 <option value="University of Kelaniya">University of Kelaniya</option>
+                 <option value="University of Colombo">University of Colombo</option>
+                 <option value="University of Colombo School of Computing (UCSC)">University of Colombo School of Computing (UCSC)</option>
+                 <option value="University of Moratuwa">University of Moratuwa</option>
+                 <option value="University of Peradeniya">University of Peradeniya</option>
+                 <option value="University of Ruhuna">University of Ruhuna</option>
+                 <option value="University of Jaffna">University of Jaffna</option>
+                 <option value="University of Jayewardenapura">University of Sri Jayewardenapura</option>
+                 <option value="Rajarata University ">Rajarata University</option>
+                 <option value="Wayamba University ">Wayamba University</option>
+                 <option value="Sabaragamuwa University ">Sabaragamuwa University</option>
+                 <option value="Open University ">Open University</option>
+                 <option value="Uva Wellassa University">Uva Wellassa University</option>
+                 <option value="General Sir Jhon Kotelawala Defence University">General Sir Jhon Kotelawala Defence University</option>
+                 <option value="Sri Lanka Institute of Information Technology (SLIIT)">Sri Lanka Institute of Information Technology (SLIIT)</option>
+                 <option value="National School Of Bussiness Management (NSBM)">National School Of Bussiness Management (NSBM)</option>
+                 <option value="Informatics Institute Of Technology (IIT)">Informatics Institute Of Technology (IIT)</option>
+                 <option value="Other">Other</option>
+                </select>
+           </label>
+            <label for="otherUniversity" id="universityInput" style="display: none;">
+                Other University Name *
+                <input class="" type="text" id="otherUniversity" name="otherUniversity" placeholder="Other University Name" />
+            </label>
+        </fieldset>
+
+        <!-- Leader Section -->
+        <fieldset>
+            <legend>Leader Details</legend>
+            <label for="leaderName" id="leaderName-label">
+                Leader Name *
+                <input type="text" id="leaderName" name="leaderName" placeholder="Leader Name" required />
+            </label>
+            <label for="leaderEmail" id="leaderEmail-label">
+                Leader Email *
+                <input type="email" id="leaderEmail" name="leaderEmail" placeholder="Leader Email" required />
+            </label>
+            <label for="leaderContact" id="leaderContact-label">
+                Leader Contact Number *
+                <input type="tel" id="leaderContact" name="leaderContact" placeholder="Leader Contact Number" required />
+            </label>
+        </fieldset>
+
+        <!-- Member 1 Section -->
+        <fieldset>
+            <legend>Member 1</legend>
+            <label for="member1Name" id="member1Name-label">
+                Member Name *
+                <input type="text" id="member1Name" name="member1Name" placeholder="Member Name" required />
+            </label>
+            <label for="member1Email" id="member1Email-label">
+                Member Email *
+                <input type="email" id="leaderEmail" name="member21Email" placeholder="Member Email" required />
+            </label>
+            <label for="member1Contact" id="member1Contact-label">
+                Member Contact Number *
+                <input type="tel" id="member1Contact" name="member1Contact" placeholder="Member Contact Number" required />
+            </label>
+        </fieldset>
+        <!-- Member 2 Section -->
+        <fieldset>
+            <legend>Member 2</legend>
+                <label for="member2Name" id="member2Name-label">
+                    Member Name *
+                    <input type="text" id="member2Name" name="member2Name" placeholder="Member Name" required />
+                </label>
+                <label for="member2Email" id="member2Email-label">
+                    Member Email *
+                    <input type="email" id="member2Email" name="member2Email" placeholder="Member Email" required />
+                </label>
+                <label for="member2Contact" id="member2Contact-label">
+                    Member Contact Number *
+                    <input type="tel" id="member2Contact" name="member2Contact" placeholder="Member Contact Number" required />
+                </label>
+        </fieldset>
+
+        <!-- Member 3 Section -->
+        <fieldset>
+            <legend>Member 3</legend>  
+                <label for="member3Name" id="member3Name-label">
+                    Member Name *
+                    <input type="text" id="member3Name" name="member3Name" placeholder="Member Name" required />
+                </label>
+                <label for="member3Email" id="member3Email-label">
+                    Member Email *
+                    <input type="email" id="member3Email" name="member3Email" placeholder="Member Email" required />
+                </label>
+                <label for="member3Contact" id="member3Contact-label">
+                    Member Contact Number *
+                    <input type="tel" id="member3Contact" name="member3Contact" placeholder="Member Contact Number" required />
+                </label>
+        </fieldset>
+
+        <fieldset>
+            <div class="labels">
+                Confirm           
+            </div>
+            <label for="survey-form-improve10" class="m-b-xs">
+                <input type="checkbox" id="survey-form-improve10" value="forum">
+                <span>I have read and agree to the <a href="https://bit.ly/rules_and_guidelines" class="rules-link">Rules and Regulations</a> of the competition</span>
+            </label>        
+        </fieldset>
+        <button id="submit" type="submit">Submit</button>
+     </form>
+
     </div>
 
     <!--Register Form End-->
