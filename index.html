@@ -219,12 +219,12 @@
     <!-- ***** Welcome Area End ***** -->
 
     <!-- ***** Timer Start ***** -->
-    <section class="section d-none" id="timer">
+    <section class="section" id="timer">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center"
                     data-scroll-reveal="enter left move 30px over 0.3s after 0.2s">
-                    <h2>Registration Close On </h2>
+                    <h2>Registration Open On </h2>
 
                     <div id="countDown" class="mx-auto flipdown"></div>
 
@@ -715,7 +715,7 @@
                                     <div class="date-outer">
                                         <span class="date">
                                             <span class="month">JANUARY</span>
-                                            <span class="year">01<sup>st</sup></span>
+                                            <span class="year">04<sup>th</sup></span>
                                         </span>
                                     </div>
                                 </div>
@@ -735,7 +735,7 @@
                                     <div class="date-outer">
                                         <span class="date">
                                             <span class="month">JANUARY</span>
-                                            <span class="year">18<sup>th</sup></span>
+                                            <span class="year">14<sup>th</sup></span>
                                         </span>
                                     </div>
                                 </div>
@@ -1050,12 +1050,14 @@
     <!-- Timer -->
     <script>
         (function () {
-            const finalDate = "2024-01-18T00:00:00";
+            const finalDate = "2024-01-04T00:00:00";
             const timestamp = moment(finalDate).unix();
             new FlipDown(timestamp, "countDown")
                 .start()
                 .ifEnded(() => {
                     console.log('The countdown has ended!');
+                    $("#timer").hide();
+                    $("#timer_close").show();
                 });
         })();
 
@@ -1067,14 +1069,6 @@
             document.getElementById('current-yr').innerHTML = thisYear;
         })();
 
-        setInterval(function () {
-            $closing_time = new Date("Thu Jan 18 2024 00:00:00 GMT+0530"); //Change the closing time here
-            $current_time = new Date();
-            if ($current_time > $closing_time) {
-                $("#timer").hide();
-                $("#timer_close").show();
-            }
-        }, 1000)
     </script>
 
     <!-- Bootstrap -->
