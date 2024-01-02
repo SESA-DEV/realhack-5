@@ -144,23 +144,23 @@
 
 
     <!-- ***** Timer Start ***** -->
-    <!--
+
     <section class="section " id="timer">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center"
                     data-scroll-reveal="enter left move 30px over 0.3s after 0.2s">
-                    <h2>Registration Close On</h2>
+                    <h2>Registration Open On</h2>
 
                     <div id="countDown" class="flipdown mx-auto"></div>
 
-                    <p class="mb-4">Registration will be closed at 11.59pm on 20th of February 2023. </p>
+                    <p class="mb-4">Registration will be opened at 12.00am on 04th of January 2024. </p>
                 </div>
             </div>
         </div>
     </section>
-    -->
-    
+
+
     <!-- ***** Timer End ***** -->
     <!--
     <section class="section" id="timer_close">
@@ -183,90 +183,99 @@
 
     <div class="left-image-decor d-none"></div>
 
-    <div id="registration-form" class="pt-3 form-container" style="position: relative; z-index: 99;"
+    <div id="registration-form" class="pt-3 form-container d-none" style="position: relative; z-index: 99;"
         data-scroll-reveal="enter left move 30px over 0.3s after 0.2s">
 
-    <form method="POST" action="https://docs.google.com/forms/u/0/d/1aLQx-9847cKB44z3zXx5C4OHKL1ip-WU0GFrigDysuE/formResponse">
-        
-        <!-- Team Info -->
-        <fieldset>
-            <legend>Team Details</legend>
-           <label for="name" id="name-label">
-            Email of the Team *
-           <input class="" type="email" id="email" name="entry.1266997897" placeholder="Team Email" required />
-           </label>
-     
-           <label for="email" id="email-label">
-            Team Name *
-           <input class="" type="text" id="name" name="entry.1766994092" placeholder="Team Name" required />
-           </label>
-    
-            <label for="dropdown">
-                University Name ? *
-                <select id="dropdown" name="entry.33717083" class="m-t-xs">
-                 <option selected>Choose</option>
-                 <option data-value="University of Kelaniya">University of Kelaniya</option>
-                 <option data-value="University of Colombo">University of Colombo</option>
-                 <option data-value="University of Colombo School of Computing (UCSC)">University of Colombo School of Computing (UCSC)</option>
-                 <option data-value="University of Moratuwa">University of Moratuwa</option>
-                 <option data-value="University of Peradeniya">University of Peradeniya</option>
-                 <option data-value="University of Ruhuna">University of Ruhuna</option>
-                 <option data-value="University of Jaffna">University of Jaffna</option>
-                 <option data-value="University of Jayewardenapura">University of Sri Jayewardenapura</option>
-                 <option data-value="Rajarata University ">Rajarata University</option>
-                 <option data-value="Wayamba University ">Wayamba University</option>
-                 <option data-value="Sabaragamuwa University ">Sabaragamuwa University</option>
-                 <option data-value="Open University ">Open University</option>
-                 <option data-value="Uva Wellassa University">Uva Wellassa University</option>
-                 <option data-value="General Sir Jhon Kotelawala Defence University">General Sir Jhon Kotelawala Defence University</option>
-                 <option data-value="Sri Lanka Institute of Information Technology (SLIIT)">Sri Lanka Institute of Information Technology (SLIIT)</option>
-                 <option data-value="National School Of Bussiness Management (NSBM)">National School Of Bussiness Management (NSBM)</option>
-                 <option data-value="Informatics Institute Of Technology (IIT)">Informatics Institute Of Technology (IIT)</option>
-                 <option data-value="other">Other</option>
-                </select>
-           </label>
-            <label for="otherUniversity" id="universityInput" style="display: none;">
-                Other University Name *
-                <input class="" type="text" id="otherUniversity" name="entry.794491526" placeholder="Other University Name" />
-            </label>
-        </fieldset>
+        <form method="POST"
+            action="https://docs.google.com/forms/u/0/d/1aLQx-9847cKB44z3zXx5C4OHKL1ip-WU0GFrigDysuE/formResponse">
 
-        <!-- Leader Section -->
-        <fieldset>
-            <legend>Leader Details</legend>
-            <label for="leaderName" id="leaderName-label">
-                Leader Name *
-                <input type="text" id="leaderName" name="entry.1621070068" placeholder="Leader Name" required />
-            </label>
-            <label for="leaderEmail" id="leaderEmail-label">
-                Leader Email *
-                <input type="email" id="leaderEmail" name="entry.473680853" placeholder="Leader Email" required />
-            </label>
-            <label for="leaderContact" id="leaderContact-label">
-                Leader Contact Number *
-                <input type="tel" id="leaderContact" name="entry.81008059" placeholder="Leader Contact Number" required />
-            </label>
-        </fieldset>
+            <!-- Team Info -->
+            <fieldset>
+                <legend>Team Details</legend>
+                <label for="name" id="name-label">
+                    Email of the Team *
+                    <input class="" type="email" id="email" name="entry.1266997897" placeholder="Team Email" required />
+                </label>
 
-        <!-- Member 1 Section -->
-        <fieldset>
-            <legend>Member 1</legend>
-            <label for="member1Name" id="member1Name-label">
-                Member Name *
-                <input type="text" id="member1Name" name="entry.1432856569" placeholder="Member Name" required />
-            </label>
-            <label for="member1Email" id="member1Email-label">
-                Member Email *
-                <input type="email" id="leaderEmail" name="entry.1438210550" placeholder="Member Email" required />
-            </label>
-            <label for="member1Contact" id="member1Contact-label">
-                Member Contact Number *
-                <input type="tel" id="member1Contact" name="entry.1666212531" placeholder="Member Contact Number" required />
-            </label>
-        </fieldset>
-        <!-- Member 2 Section -->
-        <fieldset>
-            <legend>Member 2</legend>
+                <label for="email" id="email-label">
+                    Team Name *
+                    <input class="" type="text" id="name" name="entry.1766994092" placeholder="Team Name" required />
+                </label>
+
+                <label for="dropdown">
+                    University Name ? *
+                    <select id="dropdown" name="entry.33717083" class="m-t-xs">
+                        <option selected>Choose</option>
+                        <option data-value="University of Kelaniya">University of Kelaniya</option>
+                        <option data-value="University of Colombo">University of Colombo</option>
+                        <option data-value="University of Colombo School of Computing (UCSC)">University of Colombo
+                            School of Computing (UCSC)</option>
+                        <option data-value="University of Moratuwa">University of Moratuwa</option>
+                        <option data-value="University of Peradeniya">University of Peradeniya</option>
+                        <option data-value="University of Ruhuna">University of Ruhuna</option>
+                        <option data-value="University of Jaffna">University of Jaffna</option>
+                        <option data-value="University of Jayewardenapura">University of Sri Jayewardenapura</option>
+                        <option data-value="Rajarata University ">Rajarata University</option>
+                        <option data-value="Wayamba University ">Wayamba University</option>
+                        <option data-value="Sabaragamuwa University ">Sabaragamuwa University</option>
+                        <option data-value="Open University ">Open University</option>
+                        <option data-value="Uva Wellassa University">Uva Wellassa University</option>
+                        <option data-value="General Sir Jhon Kotelawala Defence University">General Sir Jhon Kotelawala
+                            Defence University</option>
+                        <option data-value="Sri Lanka Institute of Information Technology (SLIIT)">Sri Lanka Institute
+                            of Information Technology (SLIIT)</option>
+                        <option data-value="National School Of Bussiness Management (NSBM)">National School Of Bussiness
+                            Management (NSBM)</option>
+                        <option data-value="Informatics Institute Of Technology (IIT)">Informatics Institute Of
+                            Technology (IIT)</option>
+                        <option data-value="other">Other</option>
+                    </select>
+                </label>
+                <label for="otherUniversity" id="universityInput" style="display: none;">
+                    Other University Name *
+                    <input class="" type="text" id="otherUniversity" name="entry.794491526"
+                        placeholder="Other University Name" />
+                </label>
+            </fieldset>
+
+            <!-- Leader Section -->
+            <fieldset>
+                <legend>Leader Details</legend>
+                <label for="leaderName" id="leaderName-label">
+                    Leader Name *
+                    <input type="text" id="leaderName" name="entry.1621070068" placeholder="Leader Name" required />
+                </label>
+                <label for="leaderEmail" id="leaderEmail-label">
+                    Leader Email *
+                    <input type="email" id="leaderEmail" name="entry.473680853" placeholder="Leader Email" required />
+                </label>
+                <label for="leaderContact" id="leaderContact-label">
+                    Leader Contact Number *
+                    <input type="tel" id="leaderContact" name="entry.81008059" placeholder="Leader Contact Number"
+                        required />
+                </label>
+            </fieldset>
+
+            <!-- Member 1 Section -->
+            <fieldset>
+                <legend>Member 1</legend>
+                <label for="member1Name" id="member1Name-label">
+                    Member Name *
+                    <input type="text" id="member1Name" name="entry.1432856569" placeholder="Member Name" required />
+                </label>
+                <label for="member1Email" id="member1Email-label">
+                    Member Email *
+                    <input type="email" id="leaderEmail" name="entry.1438210550" placeholder="Member Email" required />
+                </label>
+                <label for="member1Contact" id="member1Contact-label">
+                    Member Contact Number *
+                    <input type="tel" id="member1Contact" name="entry.1666212531" placeholder="Member Contact Number"
+                        required />
+                </label>
+            </fieldset>
+            <!-- Member 2 Section -->
+            <fieldset>
+                <legend>Member 2</legend>
                 <label for="member2Name" id="member2Name-label">
                     Member Name *
                     <input type="text" id="member2Name" name="entry.1034006219" placeholder="Member Name" required />
@@ -277,13 +286,14 @@
                 </label>
                 <label for="member2Contact" id="member2Contact-label">
                     Member Contact Number *
-                    <input type="tel" id="member2Contact" name="entry.622912179" placeholder="Member Contact Number" required />
+                    <input type="tel" id="member2Contact" name="entry.622912179" placeholder="Member Contact Number"
+                        required />
                 </label>
-        </fieldset>
+            </fieldset>
 
-        <!-- Member 3 Section -->
-        <fieldset>
-            <legend>Member 3</legend>  
+            <!-- Member 3 Section -->
+            <fieldset>
+                <legend>Member 3</legend>
                 <label for="member3Name" id="member3Name-label">
                     Member Name *
                     <input type="text" id="member3Name" name="entry.1890766738" placeholder="Member Name" required />
@@ -294,21 +304,23 @@
                 </label>
                 <label for="member3Contact" id="member3Contact-label">
                     Member Contact Number *
-                    <input type="tel" id="member3Contact" name="entry.1900461608" placeholder="Member Contact Number" required />
+                    <input type="tel" id="member3Contact" name="entry.1900461608" placeholder="Member Contact Number"
+                        required />
                 </label>
-        </fieldset>
+            </fieldset>
 
-        <fieldset>
-            <div class="labels">
-                Confirm           
-            </div>
-            <label for="survey-form-improve10" class="m-b-xs">
-                <input type="checkbox" id="survey-form-improve10" value="forum">
-                <span>I have read and agree to the <a href="https://bit.ly/rules_and_guidelines" class="rules-link">Rules and Regulations</a> of the competition</span>
-            </label>        
-        </fieldset>
-        <button id="submit" type="submit">Submit</button>
-     </form>
+            <fieldset>
+                <div class="labels">
+                    Confirm
+                </div>
+                <label for="survey-form-improve10" class="m-b-xs">
+                    <input type="checkbox" id="survey-form-improve10" value="forum">
+                    <span>I have read and agree to the <a href="https://bit.ly/rules_and_guidelines"
+                            class="rules-link">Rules and Regulations</a> of the competition</span>
+                </label>
+            </fieldset>
+            <button id="submit" type="submit">Submit</button>
+        </form>
 
     </div>
 
@@ -364,23 +376,15 @@
     <!-- Timer -->
     <script>
         (function () {
-            const finalDate = "2023-02-21T00:00:00";
+            const finalDate = "2024-01-04T00:00:00";
             const timestamp = moment(finalDate).unix();
             new FlipDown(timestamp, "countDown")
                 .start()
                 .ifEnded(() => {
-                    console.log('The countdown has ended!');
+                    $("#timer").hide();
+                    $("#timer_close").show();
                 });
         })();
-
-        setInterval(function () {
-            $closing_time = new Date("Tue Feb 21 2023 00:00:00 GMT+0530"); //Change the closing time here
-            $current_time = new Date();
-            if ($current_time > $closing_time) {
-                $("#timer").hide();
-                $("#timer_close").show();
-            }
-        }, 1000)
     </script>
 
     <!-- Plugins -->
