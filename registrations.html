@@ -38,6 +38,7 @@
                 }
             });
         });
+       
     </script>
 </head>
 
@@ -145,7 +146,7 @@
 
     <!-- ***** Timer Start ***** -->
 
-    <section class="section " id="timer">
+     <section class="section " id="timer">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center"
@@ -158,11 +159,11 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> 
 
 
     <!-- ***** Timer End ***** -->
-    <!--
+    
     <section class="section" id="timer_close">
         <div class="container">
             <div class="row">
@@ -179,28 +180,33 @@
                     </div>
                 </div>
     </section>
-    -->
+    
 
     <div class="left-image-decor d-none"></div>
 
-    <div id="registration-form" class="pt-3 form-container d-none" style="position: relative; z-index: 99;"
-        data-scroll-reveal="enter left move 30px over 0.3s after 0.2s">
+    <div class="registerFormDiv" id="registrationForm" style="display: none;">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSda6PUffpmpYNsDw-0Tz2eDq_Mu70VIQJCc9dAgFLH-PXLJLA/viewform?embedded=true"
+                width="640" height="1577" frameborder="0" marginheight="0" marginwidth="0">Loading…
+        </iframe>
+    </div>
 
-       
+
+<!-- 
         <form method="POST"
             action="https://docs.google.com/forms/d/e/1FAIpQLSda6PUffpmpYNsDw-0Tz2eDq_Mu70VIQJCc9dAgFLH-PXLJLA/formResponse">
 
-            <!-- Team Info -->
+            
             <fieldset>
                 <legend>Team Details</legend>
-                <label for="name" id="name-label">
-                    Email of the Team *
-                    <input class="" type="email" id="email" name="entry.693358618" placeholder="Team Email" required />
-                </label>
-
+               
                 <label for="email" id="email-label">
                     Team Name *
-                    <input class="" type="text" id="name" name="entry.755895502" placeholder="Team Name" required />
+                    <input class="" type="text" id="name" name="entry.941316280" placeholder="Team Name" required />
+                </label>
+
+                <label for="name" id="name-label">
+                    Email of the Team *
+                    <input class="" type="email" id="email" name="entry.266927348" placeholder="Team Email" required />
                 </label>
 
                 <label for="dropdown">
@@ -245,7 +251,7 @@
                 </label>
             </fieldset>
 
-            <!-- Leader Section -->
+            
             <fieldset>
                 <legend>Leader Details</legend>
                 <label for="leaderName" id="leaderName-label">
@@ -263,7 +269,7 @@
                 </label>
             </fieldset>
 
-            <!-- Member 1 Section -->
+            
             <fieldset>
                 <legend>Member 1</legend>
                 <label for="member1Name" id="member1Name-label">
@@ -280,7 +286,8 @@
                         required />
                 </label>
             </fieldset>
-            <!-- Member 2 Section -->
+           
+
             <fieldset>
                 <legend>Member 2</legend>
                 <label for="member2Name" id="member2Name-label">
@@ -298,7 +305,7 @@
                 </label>
             </fieldset>
 
-            <!-- Member 3 Section -->
+            
             <fieldset>
                 <legend>Member 3</legend>
                 <label for="member3Name" id="member3Name-label">
@@ -321,16 +328,15 @@
                     Confirm
                 </div>
                 <label for="survey-form-improve10" class="m-b-xs">
-                    <input type="checkbox" id="survey-form-improve10" name="entry.2134767737" value="I have read and agree to the Rules and Regulations of the competition">
+                    <input type="checkbox" id="survey-form-improve10" name="entry.2134767737" value="I have read and agree to the Rules and Regulations of the competition" required>
                     <span>I have read and agree to the <a href="https://docs.google.com/document/d/1zdwHvYsZpmuJngEslUkoos4mAa2lLI08tEe2-gC2bMo/edit?pli=1"
                             class="rules-link">Rules and Regulations</a> of the competition</span>
                 </label>
             </fieldset>
             <button id="submit" type="submit">Submit</button>
         </form>
+ -->
 
-
-    </div>
 
     <!--Register Form End-->
 
@@ -384,15 +390,23 @@
     <!-- Timer -->
     <script>
         (function () {
-            const finalDate = "2024-01-04T19:00:00";
+            const finalDate = "2024-01-02T19:00:00";
             const timestamp = moment(finalDate).unix();
+
+            const timerCloseDate = moment("2024-01-21T23:59:59").unix();
+
             new FlipDown(timestamp, "countDown")
                 .start()
                 .ifEnded(() => {
                     $("#timer").hide();
-                    $("#timer_close").show();
+                    $("#registrationForm").show();
                 });
+                if (moment().unix() >= timerCloseDate) {
+                    $("#timer_close").show();
+                }
         })();
+
+   
     </script>
 
     <!-- Plugins -->

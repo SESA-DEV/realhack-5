@@ -16,6 +16,8 @@ html{
     
 }
 
+
+
     /* Existing styles */
     fieldset {
         border: 2px solid var(--secondary_color_1);
@@ -78,7 +80,7 @@ html{
 
 
 @media (min-width: 600px) {
-    form {
+    .registerFormDiv {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -89,11 +91,11 @@ html{
 
 /* Styles for mobile */
 @media (max-width: 599px) {
-    form {
+    .registerFormDiv {
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 95%; /* Adjust the width as needed for mobile */
+        width: 80%; /* Adjust the width as needed for mobile */
         margin: 0 auto; /* Center the form horizontally */
     }
 }
