@@ -4,7 +4,6 @@
     --secondary_color_1: #41bbd4;
     --secondary_color_2:  #488fcd;
   }
-
 html{
     scroll-behavior: smooth;
 }
@@ -14,100 +13,6 @@ html{
     margin-top: 20px;
     position: relative;
     
-}
-
-    /* Existing styles */
-    fieldset {
-        border: 2px solid var(--secondary_color_1);
-        border-radius: 10px;
-        margin-bottom: 20px;
-        padding: 15px;
-        background-color: #f2f2f2;
-        width: 100%; /* Make fieldsets take full width */
-        box-sizing: border-box; /* Include padding and border in the width */
-    }
-
-    legend {
-        font-size: 20px;
-        font-weight: bold;
-        color: var(--primary_color_1);
-    }
-
-    label {
-        display: block;
-        margin-bottom: 10px;
-        width: 100%; /* Make labels take full width */
-    }
-    
-
-    input {
-        width: 100%;
-        padding: 8px;
-        margin-top: 5px;
-        margin-bottom: 10px;
-        box-sizing: border-box;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-    }
-
-    input[type="checkbox"] {
-        margin-top: 0;
-        width: 16px; /* Adjust the width to make the checkbox smaller */
-        height: 16px; /* Adjust the height to make the checkbox smaller */
-        margin-right: 10px; /* Add a 3px gap to the right of the checkbox */
-    }
-
-    label.m-b-xs {
-        display: flex;
-        align-items: baseline; /* Align items to the baseline */
-        margin-left: 0;
-    }
-
-    button {
-        background-color: var(--primary_color_1);
-        color: #fff;
-        padding: 10px 15px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-
-    button:hover {
-        background-color: var(--primary_color_1);
-    }
-
-
-@media (min-width: 600px) {
-    form {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 60%; /* Adjust the width as needed */
-        margin: 0 auto; /* Center the form horizontally */
-    }
-}
-
-/* Styles for mobile */
-@media (max-width: 599px) {
-    form {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 95%; /* Adjust the width as needed for mobile */
-        margin: 0 auto; /* Center the form horizontally */
-    }
-}
-@media (max-width: 599px) {
-    select {
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-        padding: 8px; /* Adjust padding as needed */
-        border: 1px solid #ccc; /* Add border style as needed */
-        border-radius: 4px; /* Add border-radius as needed */
-        width: 100%; /* Set width to 100% */
-        box-sizing: border-box;
-    }
 }
 
 .register-form {
@@ -124,7 +29,6 @@ html{
         height: 1200px;   
     }
 }
-
 
 @media (max-width: 305px){
     .register-form {

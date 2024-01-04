@@ -225,11 +225,8 @@
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center"
                     data-scroll-reveal="enter left move 30px over 0.3s after 0.2s">
-                    <h2>Registration Open On </h2>
-
+                    <h2 id="timeTitle">Registration Open On </h2>
                     <div id="countDown" class="mx-auto flipdown"></div>
-
-
                 </div>
             </div>
         </div>
@@ -343,20 +340,20 @@
          </div>
     </section> -->
 
-    <!-- <section class="section" id="timer">
+    <section class="section d-none" id="regOpenedSection">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center"
                     data-scroll-reveal="enter left move 30px over 0.3s after 0.2s">
-                    <h2 class="d-none">Registration deadline extended</h2>
+                    <h2>Registration opened</h2>
                     <div id="DateCountdown" data-date="2021-08-21 00:00:00"></div>
-                    <p class="mb-4">Registration will be closed at 11.59pm on 18th of January 2024. </p>
+                    <p class="mb-4">Registration will be closed at 11.59pm on 14th of January 2024. </p>
                     <a href="registrations.html" class="register-button">REGISTER NOW!</a>
                 </div>
             </div>
 
         </div>
-    </section> -->
+    </section>
 
 
 
@@ -379,7 +376,7 @@
 
 
 
-    <div class="right-image-decor"></div>
+    <!-- <div class="right-image-decor"></div> -->
     <br><br>
 
     <!--Organizers introduction-->
@@ -1050,25 +1047,32 @@
 
     <!-- Timer -->
     <script>
-        (function () {
-            const finalDate = "2024-01-04T19:00:00";
-            const timestamp = moment(finalDate).unix();
-            new FlipDown(timestamp, "countDown")
-                .start()
-                .ifEnded(() => {
-                    console.log('The countdown has ended!');
-                    $("#timer").hide();
-                    $("#timer_close").show();
-                });
-        })();
+        const regOpened = "2024-01-04T19:00:00";
+        const regClosedDate = "2024-01-14T00:00:00";
 
-        /*
-            set current year
-        */
         (function () {
             const thisYear = moment().format('YYYY');
             document.getElementById('current-yr').innerHTML = thisYear;
+
+            if (new Date() > new Date(regOpened)) {
+                $("#regOpenedSection").removeClass("d-none");
+                $("#timeTitle").text("Registration closed on");
+                const timestamp = moment(regClosedDate).unix();
+                new FlipDown(timestamp, "countDown")
+                    .start()
+                    .ifEnded(() => {
+                        // TODO: show registration closed
+                    });
+            } else {
+                const timestamp = moment(regOpened).unix();
+                new FlipDown(timestamp, "countDown")
+                    .start()
+                    .ifEnded(() => {
+                        window.location.reload();
+                    });
+            }
         })();
+
 
     </script>
 
