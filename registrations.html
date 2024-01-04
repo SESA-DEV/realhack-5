@@ -38,7 +38,7 @@
                 }
             });
         });
-       
+
     </script>
 </head>
 
@@ -146,7 +146,7 @@
 
     <!-- ***** Timer Start ***** -->
 
-     <section class="section " id="timer">
+    <section class="section " id="timer">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center"
@@ -159,11 +159,11 @@
                 </div>
             </div>
         </div>
-    </section> 
+    </section>
 
 
     <!-- ***** Timer End ***** -->
-    
+
     <section class="section" id="timer_close">
         <div class="container">
             <div class="row">
@@ -180,18 +180,22 @@
                     </div>
                 </div>
     </section>
-    
+
 
     <div class="left-image-decor d-none"></div>
 
-    <div id="registration-form" class="pt-3 form-container" style="position: relative; z-index: 99;" data-scroll-reveal="enter left move 30px over 0.3s after 0.2s">
-        <div id="registration-form" class="pt-3 form-container" style="position: relative; z-index: 99;" data-scroll-reveal="enter left move 30px over 0.3s after 0.2s">
-            <iframe  src="https://docs.google.com/forms/d/e/1FAIpQLSda6PUffpmpYNsDw-0Tz2eDq_Mu70VIQJCc9dAgFLH-PXLJLA/viewform?embedded=true" class="register-form" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    <div id="registration-form" class="pt-3 form-container" style="position: relative; z-index: 99;"
+        data-scroll-reveal="enter left move 30px over 0.3s after 0.2s">
+        <div id="registration-form" class="pt-3 form-container" style="position: relative; z-index: 99;"
+            data-scroll-reveal="enter left move 30px over 0.3s after 0.2s">
+            <iframe
+                src="https://docs.google.com/forms/d/e/1FAIpQLSda6PUffpmpYNsDw-0Tz2eDq_Mu70VIQJCc9dAgFLH-PXLJLA/viewform?embedded=true"
+                class="register-form" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
         </div>
     </div>
 
 
-<!-- 
+    <!-- 
         <form method="POST"
             action="https://docs.google.com/forms/d/e/1FAIpQLSda6PUffpmpYNsDw-0Tz2eDq_Mu70VIQJCc9dAgFLH-PXLJLA/formResponse">
 
@@ -389,11 +393,9 @@
 
     <!-- Timer -->
     <script>
+        const regOpenedDate = "2024-01-04T19:00:00";
         (function () {
-            const finalDate = "2024-01-04T19:00:00";
-            const timestamp = moment(finalDate).unix();
-
-            const timerCloseDate = moment("2024-01-21T23:59:59").unix();
+            const timestamp = moment(regOpenedDate).unix();
             $("#registration-form").hide();
             new FlipDown(timestamp, "countDown")
                 .start()
@@ -401,12 +403,9 @@
                     $("#timer").hide();
                     $("#registration-form").show();
                 });
-                if (moment().unix() >= timerCloseDate) {
-                    $("#timer_close").show();
-                }
         })();
 
-   
+
     </script>
 
     <!-- Plugins -->
