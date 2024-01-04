@@ -184,10 +184,10 @@
 
     <div class="left-image-decor d-none"></div>
 
-    <div class="registerFormDiv" id="registrationForm" style="display: none;">
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSda6PUffpmpYNsDw-0Tz2eDq_Mu70VIQJCc9dAgFLH-PXLJLA/viewform?embedded=true"
-                width="640" height="1577" frameborder="0" marginheight="0" marginwidth="0">Loading…
-        </iframe>
+    <div id="registration-form" class="pt-3 form-container" style="position: relative; z-index: 99;" data-scroll-reveal="enter left move 30px over 0.3s after 0.2s">
+        <div id="registration-form" class="pt-3 form-container" style="position: relative; z-index: 99;" data-scroll-reveal="enter left move 30px over 0.3s after 0.2s">
+            <iframe  src="https://docs.google.com/forms/d/e/1FAIpQLSda6PUffpmpYNsDw-0Tz2eDq_Mu70VIQJCc9dAgFLH-PXLJLA/viewform?embedded=true" class="register-form" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        </div>
     </div>
 
 
@@ -394,12 +394,12 @@
             const timestamp = moment(finalDate).unix();
 
             const timerCloseDate = moment("2024-01-21T23:59:59").unix();
-
+            $("#registration-form").hide();
             new FlipDown(timestamp, "countDown")
                 .start()
                 .ifEnded(() => {
                     $("#timer").hide();
-                    $("#registrationForm").show();
+                    $("#registration-form").show();
                 });
                 if (moment().unix() >= timerCloseDate) {
                     $("#timer_close").show();
