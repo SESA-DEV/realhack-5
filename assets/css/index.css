@@ -1150,7 +1150,6 @@ time line and rules regulations
 */
 
 .left-image-decor {
-  z-index: 1;
   background-image: url(../images/objects/left-bg-decor.png);
   background-repeat: no-repeat;
   position: absolute;
