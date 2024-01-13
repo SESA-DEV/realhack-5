@@ -43,20 +43,22 @@
 
     <!-- Meta Pixel Code -->
     <script>
-        !function(f,b,e,v,n,t,s)
-        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-            n.queue=[];t=b.createElement(e);t.async=!0;
-            t.src=v;s=b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t,s)}(window, document,'script',
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
             'https://connect.facebook.net/en_US/fbevents.js');
         fbq('init', '24590802843897434');
         fbq('track', 'PageView');
     </script>
     <noscript><img height="1" width="1" style="display:none"
-                   src="https://www.facebook.com/tr?id=24590802843897434&ev=PageView&noscript=1"
-    /></noscript>
+            src="https://www.facebook.com/tr?id=24590802843897434&ev=PageView&noscript=1" /></noscript>
     <!-- End Meta Pixel Code -->
 </head>
 
@@ -192,7 +194,7 @@
 
     <!-- ***** Timer End ***** -->
 
-    <section class="section" id="timer_close">
+    <section class="section d-none" id="regClosedSection">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center"
@@ -421,16 +423,46 @@
 
     <!-- Timer -->
     <script>
-        const regOpenedDate = "2024-01-04T19:00:00";
+        // const timeline = {
+        //     regOpened: '2024-01-04T19:00:00',
+        //     regClosed: '2024-01-14T00:00:00',
+        //     extendedRegClosed: '2024-01-21T00:00:00',
+        // }; 
+        const timeline = {
+            regOpened: '2024-01-04T19:00:00',
+            regClosed: '2024-01-14T20:00:00',
+            extendedRegClosed: '2024-01-21T00:00:00',
+        };
+
         (function () {
-            const timestamp = moment(regOpenedDate).unix();
-            $("#registration-form").hide();
-            new FlipDown(timestamp, "countDown")
-                .start()
-                .ifEnded(() => {
-                    $("#timer").hide();
-                    $("#registration-form").show();
-                });
+            const now = new Date();
+
+            if (now < new Date(timeline.regOpened)) {
+                // Countdown until registration open
+                $("#registration-form").hide();
+                new FlipDown(moment(timeline.regOpened).unix(), "countDown")
+                    .start()
+                    .ifEnded(() => {
+                        window.location.reload();
+                    });
+
+            } else if (now > new Date(timeline.regOpened) && now < new Date(timeline.regClosed)) {
+                // Countdown until registration close
+                $("#timer").hide();
+                $("#registration-form").show();
+
+            } else if (now > new Date(timeline.regClosed) && now < new Date(timeline.extendedRegClosed)) {
+                // Deadline extended: Countdown until registration close
+                $("#timer").hide();
+                $("#registration-form").show();
+
+            } else {
+                // Registration closed
+                $("#timer").hide();
+                $("#registration-form").hide();
+                $("#regClosedSection").removeClass("d-none");
+
+            }
         })();
 
 

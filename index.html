@@ -377,7 +377,8 @@
                     data-scroll-reveal="enter left move 30px over 0.3s after 0.2s">
                     <h2>Registration opened</h2>
                     <div id="DateCountdown" data-date="2021-08-21 00:00:00"></div>
-                    <p class="mb-4">Registration will be closed at 11.59pm on 14th of January 2024. </p>
+                    <p class="mb-4" id="deadlineText">Registration will be closed at 11.59pm on 14th of January 2024.
+                    </p>
                     <a href="registrations.html" class="register-button">REGISTER NOW!</a>
                 </div>
             </div>
@@ -1104,6 +1105,7 @@
                 // Deadline extended: Countdown until registration close
                 $("#regOpenedSection").removeClass("d-none");
                 $("#timeTitle").text("Registration deadline extended");
+                $("#deadlineText").text("Registration will be closed at 11.59pm on 21st of January 2024.");
                 timestamp = moment(timeline.extendedRegClosed).unix();
 
             } else {
