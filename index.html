@@ -385,7 +385,7 @@
 
 
 
-    <section class="section d-none" id="timer_close">
+    <section class="section" id="timerClose">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center"
@@ -1082,7 +1082,9 @@
             const thisYear = moment().format('YYYY');
             document.getElementById('current-yr').innerHTML = thisYear;
 
-            if (new Date() > new Date(regOpened)) {
+
+
+            if (new Date() > new Date(regOpened) && new Date() < new Date(regClosedDate)){
                 $("#regOpenedSection").removeClass("d-none");
                 $("#timeTitle").text("Registration closed on");
                 const timestamp = moment(regClosedDate).unix();
@@ -1091,13 +1093,17 @@
                     .ifEnded(() => {
                         // TODO: show registration closed
                     });
+            } else if (new Date() > new Date(regClosedDate)) {
+                $("#timerClose").removeClass("d-none");
+                $("#timer").hide();
+               
             } else {
                 const timestamp = moment(regOpened).unix();
                 new FlipDown(timestamp, "countDown")
                     .start()
                     .ifEnded(() => {
                         window.location.reload();
-                    });
+                });
             }
         })();
 
