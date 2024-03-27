@@ -38,22 +38,20 @@
 
     <!-- Meta Pixel Code -->
     <script>
-        !function (f, b, e, v, n, t, s) {
-            if (f.fbq) return; n = f.fbq = function () {
-                n.callMethod ?
-                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-            };
-            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
-            n.queue = []; t = b.createElement(e); t.async = !0;
-            t.src = v; s = b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t, s)
-        }(window, document, 'script',
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
             'https://connect.facebook.net/en_US/fbevents.js');
         fbq('init', '24590802843897434');
         fbq('track', 'PageView');
     </script>
     <noscript><img height="1" width="1" style="display:none"
-            src="https://www.facebook.com/tr?id=24590802843897434&ev=PageView&noscript=1" /></noscript>
+                   src="https://www.facebook.com/tr?id=24590802843897434&ev=PageView&noscript=1"
+    /></noscript>
     <!-- End Meta Pixel Code -->
 
 
@@ -377,8 +375,7 @@
                     data-scroll-reveal="enter left move 30px over 0.3s after 0.2s">
                     <h2>Registration opened</h2>
                     <div id="DateCountdown" data-date="2021-08-21 00:00:00"></div>
-                    <p class="mb-4" id="deadlineText">Registration will be closed at 11.59pm on 14th of January 2024.
-                    </p>
+                    <p class="mb-4">Registration will be closed at 11.59pm on 14th of January 2024. </p>
                     <a href="registrations.html" class="register-button">REGISTER NOW!</a>
                 </div>
             </div>
@@ -388,7 +385,7 @@
 
 
 
-    <section class="section d-none" id="RegCloseSection">
+    <section class="section d-none" id="timer_close">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center"
@@ -764,7 +761,7 @@
                                     <div class="date-outer">
                                         <span class="date">
                                             <span class="month">JANUARY</span>
-                                            <span class="year">21<sup>st</sup></span>
+                                            <span class="year">14<sup>th</sup></span>
                                         </span>
                                     </div>
                                 </div>
@@ -823,8 +820,8 @@
                                 <div class="date-content">
                                     <div class="date-outer">
                                         <span class="date">
-                                            <span class="month">FEBRUARY</span><br>
-                                            <span class="year">17<sup>th</sup></span>
+                                            <span class="month">APRIL</span>
+                                            <span class="year">20<sup>th</sup></span>
                                         </span>
                                     </div>
                                 </div>
@@ -843,8 +840,8 @@
                                 <div class="date-content">
                                     <div class="date-outer">
                                         <span class="date">
-                                            <span class="month">FEBRUARY</span>
-                                            <span class="year">18<sup>th</sup></span>
+                                            <span class="month">APRIL</span>
+                                            <span class="year">21<sup>st</sup></span>
                                         </span>
                                     </div>
                                 </div>
@@ -1078,51 +1075,30 @@
 
     <!-- Timer -->
     <script>
-        const timeline = {
-            regOpened: '2024-01-04T19:00:00',
-            regClosed: '2024-01-14T00:00:00',
-            extendedRegClosed: '2024-01-21T24:00:00',
-        };
+        const regOpened = "2024-01-04T19:00:00";
+        const regClosedDate = "2024-01-14T00:00:00";
 
         (function () {
             const thisYear = moment().format('YYYY');
             document.getElementById('current-yr').innerHTML = thisYear;
 
-            const now = new Date();
-            let timestamp;
-            if (now < new Date(timeline.regOpened)) {
-                // Countdown until registration open
-                $("#timeTitle").text("Registration Open On");
-                timestamp = moment(timeline.regOpened).unix();
-
-            } else if (now > new Date(timeline.regOpened) && now < new Date(timeline.regClosed)) {
-                // Countdown until registration close
+            if (new Date() > new Date(regOpened)) {
                 $("#regOpenedSection").removeClass("d-none");
                 $("#timeTitle").text("Registration closed on");
-                timestamp = moment(timeline.regClosed).unix();
-
-            } else if (now > new Date(timeline.regClosed) && now < new Date(timeline.extendedRegClosed)) {
-                // Deadline extended: Countdown until registration close
-                $("#regOpenedSection").removeClass("d-none");
-                $("#timeTitle").text("Registration deadline extended");
-                $("#deadlineText").text("Registration will be closed at 11.59pm on 21st of January 2024.");
-                timestamp = moment(timeline.extendedRegClosed).unix();
-
+                const timestamp = moment(regClosedDate).unix();
+                new FlipDown(timestamp, "countDown")
+                    .start()
+                    .ifEnded(() => {
+                        // TODO: show registration closed
+                    });
             } else {
-                // Registration closed
-                $('#timer').hide();
-                $("#RegCloseSection").removeClass("d-none");
-
-            }
-
-            if (timestamp) {
+                const timestamp = moment(regOpened).unix();
                 new FlipDown(timestamp, "countDown")
                     .start()
                     .ifEnded(() => {
                         window.location.reload();
                     });
             }
-
         })();
 
 
